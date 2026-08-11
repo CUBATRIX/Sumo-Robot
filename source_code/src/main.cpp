@@ -12,8 +12,12 @@ int average = 0;
 // put function declarations here:
 int myFunction(int, int);
 
-void movingAverage() {
-
+void movingAverage(uint8_t sensor_reading) {
+  total = total - readings[readIndex];
+  readings[readIndex] = sensor_reading;
+  total = total + readings[readIndex];
+  readIndex = (readIndex + 1) % numReadings;
+  average = total / numReadings;
 }
 
 void setup() {
@@ -36,6 +40,7 @@ void loop() {
   // Leitura do sensor de refletância
   if (digitalRead(sensorRef)) {
     Serial.println("Sensor de refletância em nível alto.");
+    movingAverage(analogRead(sensorRef));
     delay(15);
   }
 }

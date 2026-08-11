@@ -20,7 +20,10 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(sensorPin, INPUT);
   pinMode(sensorRef, INPUT);
-  int result = myFunction(2, 3);
+  for(int i = 0; i < numReadings; i++) {
+    readings[i] = 0;
+  }
+
 }
 
 void loop() {

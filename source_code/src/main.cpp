@@ -3,8 +3,18 @@
 #define sensorPin 13
 #define sensorRef 15
 
+const int numReadings = 10;
+int readings[numReadings];
+int readIndex = 0;
+long total = 0;
+int average = 0;
+
 // put function declarations here:
 int myFunction(int, int);
+
+void movingAverage() {
+
+}
 
 void setup() {
   // put your setup code here, to run once:

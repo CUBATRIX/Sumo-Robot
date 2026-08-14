@@ -43,6 +43,9 @@ void loop() {
     movingAverage(analogRead(sensorRef));
     delay(15);
   }
+
+  Serial.println("oi")
+
 }
 
 // put function definitions here:
